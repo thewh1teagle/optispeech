@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 from . import symbols
 from .normalization import UNICODE_NORM_FORM, collapse_whitespace, intersperse, preprocess_text
+from os import getenv
 
 # tokenizer registry
 _TOKENIZERS = {}
@@ -92,6 +93,7 @@ class IPATokenizer(BaseTokenizer):
 
         # Preprocess
         text = self.preprocess_text(text, language)
-        # Phonemize
-        phonemes = phonemize_espeak(text, language)
+        # Phonemize        
+        espeak_data_path = getenv('ESPEAK_DATA_PATH')
+        phonemes = phonemize_espeak(text, language, data_path=espeak_data_path)
         return phonemes, text

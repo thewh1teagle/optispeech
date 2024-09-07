@@ -1,0 +1,20 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=multispeaker
+
+defaults:
+  - override /data: saspeech-he.yaml
+  - override /model: convnext_tts.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["saspeech-he"]
+
+run_name: saspeech_he
+
+
+trainer:
+  max_steps: 2000000
+  check_val_every_n_epoch: 1000

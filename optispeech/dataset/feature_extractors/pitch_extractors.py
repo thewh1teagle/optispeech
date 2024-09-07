@@ -102,7 +102,7 @@ class PENNPitchExtractor(BasePitchExtractor):
             fmax=self.f_max,
             batch_size=self.batch_size,
             interp_unvoiced_at=self.interp_unvoiced_at,
-            gpu=0
+            gpu=0 if torch.cuda.is_available() else None
         )
         pitch = pitch.detach().cpu().numpy().squeeze()
         pitch = trim_or_pad_to_target_length(pitch, mel_length)

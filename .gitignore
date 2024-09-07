@@ -165,3 +165,9 @@ synth_output/
 # local only files/dirs
 scripts/synthesize.py
 ./data/
+saspeech_gold_standard/
+saspeech_gold_standard_split/
+saspeech/
+saspeech_processed/
+espeak-ng/
+espeak-ng-data/
