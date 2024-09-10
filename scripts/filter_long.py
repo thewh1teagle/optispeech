@@ -13,7 +13,7 @@ new_rows = []
 for row in rows:
     path = wavs / f'{row[0]}.wav'
     duration = librosa.get_duration(filename=str(path))
-    if duration < 10:
+    if duration < 30:
         new_rows.append(row)
 
 with open('saspeech_gold_standard/metadata_new.csv', 'w', newline='') as f:
