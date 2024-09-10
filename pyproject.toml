@@ -7,6 +7,7 @@ dependencies = [
     "torchvision>=0.15.0",
     "lightning>=2.0.0",
     "torchmetrics>=0.11.4",
+    "nnAudio>=0.3.3",
     "penn==0.0.14",
     "pyworld>=0.3.4",
     "pesq>=0.0.4",
@@ -51,6 +52,7 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
+universal = true
 dev-dependencies = [
     "cython>=3.0.11",
     "black>=24.8.0",
