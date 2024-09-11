@@ -105,8 +105,8 @@ python -m optispeech.train \
     data.valid_filelist_path="data/saspeech/val.txt" \
     callbacks.model_checkpoint.every_n_epochs=5  \
     paths.log_dir="data/saspeech/logs" \
-    ckpt_path="last.ckpt" \
-    save_last=True
+    callbacks.model_checkpoint.save_last=True \
+    ckpt_path="last.ckpt"
 ```
 
 # Setup rclone to copy to drive
