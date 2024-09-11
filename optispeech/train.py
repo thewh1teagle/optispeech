@@ -78,6 +78,7 @@ def train(cfg: DictConfig) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     ckpt_path = cfg.get("ckpt_path")
     if (ckpt_path is not None) and cfg.get("forced_resume"):
         model = torch.load(ckpt_path)
+        global_step_offset = model["global_step"]
         trainer.fit_loop.epoch_loop._batches_that_stepped = global_step_offset
         global_step_offset = model['global_step']
         del model
