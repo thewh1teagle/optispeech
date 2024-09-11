@@ -65,6 +65,22 @@ ls $ESPEAK_DATA_PATH
 cd ..
 ```
 
+_Fix pytorch erros to load models__
+
+```console
+rye add torchaudio==2.3.1
+rye sync
+```
+
+```console
+wget https://github.com/thewh1teagle/optispeech/releases/download/v0.1.0/espeak-ng-data.7z
+7z x espeak-ng-data.7z
+echo "export ESPEAK_DATA_PATH=$(pwd)/espeak-ng-data" >> ~/.bashrc
+. ~/.bashrc
+ls $ESPEAK_DATA_PATH
+```
+
+
 _Prepare dataset_
 
 ```console
@@ -83,12 +99,14 @@ _Start training_
 python -m optispeech.train \
     experiment="saspeech-he" \
     model.train_args.evaluate_utmos=false \
-    data.batch_size=16 \
+    data.batch_size=8 \
     data.num_workers=8 \
     data.train_filelist_path="data/saspeech/train.txt" \
     data.valid_filelist_path="data/saspeech/val.txt" \
     callbacks.model_checkpoint.every_n_epochs=5  \
-    paths.log_dir="data/saspeech/logs"
+    paths.log_dir="data/saspeech/logs" \
+    ckpt_path="last.ckpt" \
+    save_last=True
 ```
 
 # Setup rclone to copy to drive
