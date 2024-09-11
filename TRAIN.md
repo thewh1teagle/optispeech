@@ -162,3 +162,9 @@ Caused by: Traceback (most recent call last):
 IndexError: index 0 is out of bounds for axis 0 with size 0
 
 ```
+
+## Export onnx
+
+```console
+python3 -m optispeech.onnx.export last.ckpt
+```
