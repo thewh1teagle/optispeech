@@ -77,9 +77,7 @@ def train(cfg: DictConfig) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     ckpt_path = cfg.get("ckpt_path")
     if (ckpt_path is not None) and cfg.get("forced_resume"):
         model_cls = type(model)
-        ckpt_model = model_cls.load_from_checkpoint(ckpt_path, map_location="cpu")
-        model.load_state_dict(ckpt_model.state_dict(), strict=False)
-        del model_cls, ckpt_model
+        model = model_cls.load_from_checkpoint(ckpt_path, map_location="cpu", strict=False, **model.hparams)
         ckpt_path = None
 
     if cfg.get("train"):
