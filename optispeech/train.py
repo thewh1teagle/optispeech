@@ -78,6 +78,8 @@ def train(cfg: DictConfig) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     if (ckpt_path is not None) and cfg.get("forced_resume"):
         model_cls = type(model)
         model = model_cls.load_from_checkpoint(ckpt_path, map_location="cpu", strict=False, **model.hparams)
+        global_step_offset = model["global_step"]
+        trainer.fit_loop.epoch_loop._batches_that_stepped = global_step_offset
         ckpt_path = None
 
     if cfg.get("train"):
