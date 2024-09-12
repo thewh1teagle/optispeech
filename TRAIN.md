@@ -99,7 +99,7 @@ _Start training_
 python -m optispeech.train \
     experiment="saspeech-he" \
     model.train_args.evaluate_utmos=false \
-    data.batch_size=8 \
+    data.batch_size=16 \
     data.num_workers=8 \
     data.train_filelist_path="data/saspeech/train.txt" \
     data.valid_filelist_path="data/saspeech/val.txt" \
