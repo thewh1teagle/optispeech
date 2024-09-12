@@ -178,3 +178,6 @@ python3 -m optispeech.onnx.export last.ckpt last.onnx
 gh release upload v0.1.0 last.ckpt.7z -R https://github.com/thewh1teagle/optispeech
 gh release upload v0.1.0 last.onnx.7z -R https://github.com/thewh1teagle/optispeech
 ```
+
+
+Trained on `nvidia/cuda:11.8.0-runtime-ubuntu22.04` template.
