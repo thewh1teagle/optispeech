@@ -1,5 +1,13 @@
 # Train
 
+_Prepare repository_
+
+```console
+git clone https://github.com/thewh1teagle/optispeech -b he
+cd optispeech
+```
+
+
 Prerequisites
 
 Rye https://rye.astral.sh/
@@ -19,14 +27,6 @@ sudo apt install cmake nvtop htop p7zip-full -y
 sudo ln -s /usr/bin/clang-18 /usr/bin/clang
 sudo ln -s /usr/bin/clang++-18 /usr/bin/clang++
 ```
-
-_Prepare repository_
-
-```console
-git clone https://github.com/thewh1teagle/optispeech -b he
-cd optispeech
-```
-
 
 __Install dependencies__
 
@@ -104,7 +104,7 @@ python -m optispeech.train \
     data.train_filelist_path="data/saspeech/train.txt" \
     data.valid_filelist_path="data/saspeech/val.txt" \
     paths.log_dir="data/saspeech/logs" \
-    callbacks.model_checkpoint.every_n_epochs=5  \
+    callbacks.model_checkpoint.every_n_epochs=1  \
     callbacks.model_checkpoint.save_last=True \
     ckpt_path="last.ckpt"
 ```
