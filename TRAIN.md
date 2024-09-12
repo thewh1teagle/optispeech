@@ -15,7 +15,7 @@ __Ubuntu dependencies__
 
 ```console
 bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-sudo apt install cmake -y
+sudo apt install cmake nvtop htop p7zip-full -y
 sudo ln -s /usr/bin/clang-18 /usr/bin/clang
 sudo ln -s /usr/bin/clang++-18 /usr/bin/clang++
 ```
