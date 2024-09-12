@@ -105,7 +105,7 @@ python -m optispeech.train \
     data.valid_filelist_path="data/saspeech/val.txt" \
     paths.log_dir="data/saspeech/logs" \
     callbacks.model_checkpoint.every_n_epochs=1  \
-    callbacks.model_checkpoint.save_on_train_epoch_end=True \
+    callbacks.model_checkpoint.save_on_train_epoch_end=True
 ```
 
 Add `ckpt_path="last.ckpt"` to resume from previous checkpoint.
