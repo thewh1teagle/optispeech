@@ -37,7 +37,7 @@ rye sync
 _Prepare dataset_
 
 ```console
-wget "https://openslr.elda.org/resources/134/saspeech_gold_standard_v1.0.tar.gz"
+aria2c -x16 -s16 "https://openslr.elda.org/resources/134/saspeech_gold_standard_v1.0.tar.gz"
 tar xf saspeech_gold_standard_v1.0.tar.gz
 ```
 
