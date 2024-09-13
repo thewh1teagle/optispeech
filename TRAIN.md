@@ -3,7 +3,7 @@
 _Prepare repository_
 
 ```console
-git clone https://github.com/thewh1teagle/optispeech -b he
+git clone https://github.com/thewh1teagle/optispeech -b he-v1
 cd optispeech
 ```
 
