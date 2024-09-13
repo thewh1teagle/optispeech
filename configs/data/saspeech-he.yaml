@@ -12,14 +12,14 @@ batch_size: 16
 num_workers: 8
 pin_memory: True
 data_statistics:  # Computed for saspeech dataset
-  pitch_min: 55.238178
-  pitch_max: 550.746582
-  pitch_mean: 143.805801
-  pitch_std: 36.134865
+  pitch_min: 55.223736
+  pitch_max: 550.753174
+  pitch_mean: 143.805191
+  pitch_std: 36.134514
   energy_min: 0.001879
   energy_max: 578.68219
-  energy_mean: 94.595634
-  energy_std: 79.05619
-  mel_mean: -4.198716
-  mel_std: 2.186619
+  energy_mean: 94.595657
+  energy_std: 79.05629
+  mel_mean: -4.198717
+  mel_std: 2.186617  
 seed: ${seed}
