@@ -46,8 +46,6 @@ _Split validation (10%)_
 ```console
 # Remove invalid wav file from dataset
 sed -i '/^gold_000_line_104/d' saspeech_gold_standard/metadata.csv
-cp saspeech_gold_standard/metadata.csv saspeech_gold_standard/metadata.csv.bak
-sed -n '1,1000p' saspeech_gold_standard/metadata.csv > saspeech_gold_standard/new.csv && mv saspeech_gold_standard/new.csv saspeech_gold_standard/metadata.csv # keep only 1/4 of the dataset (1/1.5 hour)
 
 python3 scripts/split_saspeech.py saspeech_gold_standard saspeech 10
 ```
