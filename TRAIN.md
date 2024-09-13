@@ -23,7 +23,7 @@ __Ubuntu dependencies__
 
 ```console
 bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-sudo apt install cmake nvtop htop p7zip-full -y
+sudo apt install cmake nvtop htop p7zip-full aria2 -y
 sudo ln -s /usr/bin/clang-18 /usr/bin/clang
 sudo ln -s /usr/bin/clang++-18 /usr/bin/clang++
 ```
@@ -32,6 +32,8 @@ __Install dependencies__
 
 ```console
 rye sync
+# Fix pytorch erros to load models
+rye add torchaudio==2.3.1
 ```
 
 _Prepare dataset_
@@ -61,13 +63,6 @@ export ESPEAK_DATA_PATH=$(pwd)/build/espeak-ng-data
 echo 'ESPEAK_DATA_PATH=$(pwd)/build/espeak-ng-data' >> ~/.bashrc
 ls $ESPEAK_DATA_PATH
 cd ..
-```
-
-_Fix pytorch erros to load models__
-
-```console
-rye add torchaudio==2.3.1
-rye sync
 ```
 
 ```console
